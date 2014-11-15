@@ -1,344 +1,264 @@
-MarkDown书写规范
-========
+----------
 
-写文档好帮手，轻量级标记语言 Markdown
 
-#概述
+Welcome to StackEdit!
+===================
 
-##起源
 
-Markdown是[Daring Fireball](http://daringfireball.net/projects/markdown/syntax)的作者John Gruber发明，身为Blogger，可能他也觉得传统的HTML有些复杂吧，退一步来讲，若是一个毫无计算机基础的Blogger，根本也没必要去掌握那些复杂的标签语言知识。
+Hello, I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I can be helpful. I can be recovered anyway in the **Utils** tab of the <i class="icon-cog"></i> **Settings** dialog.
 
-##宗旨
+----------
 
-Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。
 
-可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、atx、Textile、reStructuredText、Grutatext 和 EtText，而最大灵感来源其实是纯文本电子邮件的格式。
+Documents
+-------------
 
-总之， Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。比如：在文字两旁加上星号，看起来就像*强调*。Markdown 的列表看起来，嗯，就是列表。Markdown 的区块引用看起来就真的像是引用一段文字，就像你曾在电子邮件中见过的那样。
+**StackEdit** stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
 
-##兼容 HTML
+> **Note:**
 
-Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想不是要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种发布的格式，Markdown 是一种书写的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。
+> - StackEdit is accessible offline after the application has been loaded for the first time.
+> - Your local documents are not shared between different browsers or computers.
+> - Clearing your browser's data may **delete all your local documents!** Make sure your documents are synchronized with your **Google Drive** or your **Dropbox** account (check out the [<i class="icon-refresh"></i> Synchronization](#synchronization) section).
 
-不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。不需要额外标注这是 HTML 或是 Markdown；只要直接加标签就可以了。
+#### <i class="icon-file"></i> Create a document
 
-要制约的只有一些 HTML 区块元素――比如 ` <div>` 、`<table>`、`<pre>`、`<p>`等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，不会在 HTML 区块标签外加上不必要的 ```<p>``` 标签。
+The document panel is accessible using  <i class="icon-folder-open"></i> button in the navigation bar. You can create a new document by clicking <i class="icon-file"></i> **New document** in the document panel.
 
-###Editorially上有一个简单的比较：
+#### <i class="icon-folder-open"></i> Switch to another document
 
-![html](http://blog-images.editorially.com.s3.amazonaws.com/content/text-editor.png)
+All your local documents are listed in the document panel. You can switch from one to another by clicking a document in the list or you can toggle documents using <kbd>Ctrl+[</kbd> and <kbd>Ctrl+]</kbd>.
 
-![md](http://blog-images.editorially.com.s3.amazonaws.com/content/editorially.png)
+#### <i class="icon-pencil"></i> Rename a document
 
-上面是HTML语法，下面则是Markdown语法，最终产生的格式一模一样。
+You can rename the current document by clicking the document title in the navigation bar.
 
+#### <i class="icon-trash"></i> Delete a document
 
-#全局规范
+You can delete the current document by clicking <i class="icon-trash"></i> **Delete document** in the document panel.
 
-MarkDown 文件均使用```.md```作为后缀 *(小写字母)*
+#### <i class="icon-hdd"></i> Export a document
 
-普通文本换行，使用行末尾```2空格```触发
+You can save the current document to a file by clicking <i class="icon-hdd"></i> **Export to disk** from the <i class="icon-provider-stackedit"></i> menu panel.
 
+> **Tip:** Check out the [<i class="icon-upload"></i> Publish a document](#publish-a-document) section for a description of the different output formats.
 
-##发展
 
-越来越多的软件和服务支持Markdown语法，应该说，Mac上大多数的写作软件都支持它。在线工具同样有很多，如果你的博客基于Wordpress或是blogger，它同样支持发布。
+----------
 
-不仅仅是写博客，一切文章都可以用Markdown语法来写，比如说你想将一个标题加大字体，只需要在相应文字前面加上一个#或是在它的下一行加上一些等号即可，还有比这更简单的调整格式方式吗？
 
+Synchronization
+-------------------
 
-#语法参见
+**StackEdit** can be combined with <i class="icon-provider-gdrive"></i> **Google Drive** and <i class="icon-provider-dropbox"></i> **Dropbox** to have your documents centralized in the *Cloud*. The synchronization mechanism will take care of uploading your modifications or downloading the latest version of your documents.
 
-[官方语法说明](http://daringfireball.net/projects/markdown/syntax)
+> **Note:**
 
-[GitHub MakDown 语法](https://github.com/mojombo/github-flavored-markdown/issues/1)
+> - Full access to **Google Drive** or **Dropbox** is required to be able to import any document in StackEdit. Permission restrictions can be configured in the settings.
+> - Imported documents are downloaded in your browser and are not transmitted to a server.
+> - If you experience problems saving your documents on Google Drive, check and optionally disable browser extensions, such as Disconnect.
 
-[PDF版本](https://github.com/hoosin/MarkDown/blob/master/MarkDown%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80.pdf?raw=true)
+#### <i class="icon-refresh"></i> Open a document
 
+You can open a document from <i class="icon-provider-gdrive"></i> **Google Drive** or the <i class="icon-provider-dropbox"></i> **Dropbox** by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Open from...**. Once opened, any modification in your document will be automatically synchronized with the file in your **Google Drive** / **Dropbox** account.
 
+#### <i class="icon-refresh"></i> Save a document
 
- 
-#Markdown 免费编辑器
+You can save any document by opening the <i class="icon-refresh"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. **StackEdit** can synchronize one document with multiple locations and accounts.
 
+#### <i class="icon-refresh"></i> Synchronize a document
 
-##Windows 平台
+Once your document is linked to a <i class="icon-provider-gdrive"></i> **Google Drive** or a <i class="icon-provider-dropbox"></i> **Dropbox** file, **StackEdit** will periodically (every 3 minutes) synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be detected.
 
-* [MarkdownPad](http://markdownpad.com/)
+If you just have modified your document and you want to force the synchronization, click the <i class="icon-refresh"></i> button in the navigation bar.
 
-* [MarkPad](http://code52.org/DownmarkerWPF/)
+> **Note:** The <i class="icon-refresh"></i> button is disabled when you have no document to synchronize.
 
-* [mdcharm](http://www.mdcharm.com/)
+#### <i class="icon-refresh"></i> Manage document synchronization
 
-##Linux 平台
+Since one document can be synchronized with multiple locations, you can list and manage synchronized locations by clicking <i class="icon-refresh"></i> **Manage synchronization** in the <i class="icon-refresh"></i> **Synchronize** sub-menu. This will let you remove synchronization locations that are associated to your document.
 
-* [ReText](http://sourceforge.net/p/retext/home/ReText/)
+> **Note:** If you delete the file from **Google Drive** or from **Dropbox**, the document will no longer be synchronized with that location.
 
-##Mac 平台
+----------
 
-* [Mou](http://mouapp.com/)
 
-* [DayOne](http://dayoneapp.com/)
+Publication
+-------------
 
-##在线编辑器
+Once you are happy with your document, you can publish it on different websites directly from **StackEdit**. As for now, **StackEdit** can publish on **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **Tumblr**, **WordPress** and on any SSH server.
 
-* [Draftin](https://draftin.com/)：功能强大，可发布到各种博客平台。
+#### <i class="icon-upload"></i> Publish a document
 
-* [Dillinger](http://dillinger.io/)：实时预览，支持直接保存到Dropbox或是Github。
+You can publish your document by opening the <i class="icon-upload"></i> **Publish** sub-menu and by choosing a website. In the dialog box, you can choose the publication format:
 
-* [Markable](http://markable.in/)：实时预览，支持发布到Tumblr。
+- Markdown, to publish the Markdown text on a website that can interpret it (**GitHub** for instance),
+- HTML, to publish the document converted into HTML (on a blog for example),
+- Template, to have a full control of the output.
 
-* [Oak](http://oakoutliner.com/)：不支持发布到任何地方，供在线随手记录东西使用。
+> **Note:** The default template is a simple webpage wrapping your document in HTML format. You can customize it in the **Advanced** tab of the <i class="icon-cog"></i> **Settings** dialog.
 
-* [简书](http://jianshu.io/)：国产软件，看上去不错。
+#### <i class="icon-upload"></i> Update a publication
 
-##浏览器插件
+After publishing, **StackEdit** will keep your document linked to that publication which makes it easy for you to update it. Once you have modified your document and you want to update your publication, click on the <i class="icon-upload"></i> button in the navigation bar.
 
-* [MaDe](https://chrome.google.com/webstore/detail/oknndfeeopgpibecfjljjfanledpbkog) (Chrome)
+> **Note:** The <i class="icon-upload"></i> button is disabled when your document has not been published yet.
 
-##高级应用
+#### <i class="icon-upload"></i> Manage document publication
 
-* [Sublime Text 2](http://www.sublimetext.com/2)
-* [MarkdownEditing](http://ttscoff.github.com/MarkdownEditing/) / [教程](http://lucifr.com/2012/07/12/markdownediting-for-sublime-text-2/)
-* [atom](https://atom.io/)
+Since one document can be published on multiple locations, you can list and manage publish locations by clicking <i class="icon-upload"></i> **Manage publication** in the <i class="icon-provider-stackedit"></i> menu panel. This will let you remove publication locations that are associated to your document.
 
-\*** 如有更好的 Markdown 免费编辑器推荐，请到[这里反馈](https://github.com/hoosin/MarkDown/issues)，谢谢！
+> **Note:** If the file has been removed from the website or the blog, the document will no longer be published on that location.
 
+----------
 
-**注：本文档符合自身规范，可视作demo，参看源码，欢迎大家 ```fork``` 补充完善。**
 
+Markdown Extra
+--------------------
 
+**StackEdit** supports **Markdown Extra**, which extends **Markdown** syntax with some nice features.
 
+> **Tip:** You can disable any **Markdown Extra** feature in the **Extensions** tab of the <i class="icon-cog"></i> **Settings** dialog.
 
-#DEMO Start
-================================
+> **Note:** You can find more information about **Markdown** syntax [here][2] and **Markdown Extra** extension [here][3].
 
 
-##标题
+### Tables
 
----
->一共有六级标题,1-6个#表示
+**Markdown Extra** has a special syntax for tables:
 
-#一级标题
+Item     | Value
+-------- | ---
+Computer | $1600
+Phone    | $12
+Pipe     | $1
 
-一级标题也可以用底线是=表示,任何数量都可以
-=
+You can specify column alignment with one or two colons:
 
-##二级标题
+| Item     | Value | Qty   |
+| :------- | ----: | :---: |
+| Computer | $1600 |  5    |
+| Phone    | $12   |  12   |
+| Pipe     | $1    |  234  |
 
-二级标题也可以用底线是-表示，任何数量都可以
--
 
-###三级标题
+### Definition Lists
 
-####四级标题
+**Markdown Extra** has a special syntax for definition lists too:
 
-#####五级标题
+Term 1
+Term 2
+:   Definition A
+:   Definition B
 
-######六级标题
+Term 3
 
+:   Definition C
 
-##强调
+:   Definition D
 
----
-*single asterisks*
+	> part of definition D
 
-_single underscores_
 
-**double asterisks**
+### Fenced code blocks
 
-__double underscores__
+GitHub's fenced code blocks[^gfm] are also supported with **Prettify** syntax highlighting:
 
-**粗体\*\*包围**
-
-*斜体\*包围*
-
-##引用
-
----
-
-上面的横线用三个-表示
-
->区块引用
-
->fdfd
-
-##删除
-
----
-~~删除他~~
-
-##列表
-
----
-
-* red
-* green
-* blue
-
-+ red
-+ green
-+ blue
-
-- red
-- green
-- blue
-
-
-1. red
-2. green
-3. blue
-
-
-* 一个列表包含一个区块
-> fdfdfdfd
-> 
-dfdfdfdfd
->
-
-##代码
-
----
-代码写在这里
-
-`
- public static void main()
-`
-
-this is method `` printf('\n');``
-
-```js
-function method()
-{
-    alert("javascript");
-}
+```
+// Foo
+var bar = 0;
 ```
 
-```java
-class Test{
-    public static void main(String argc[]){
-        System.out.println("java");
-    }
-}
+> **Tip:** To use **Highlight.js** instead of **Prettify**, just configure the **Markdown Extra** extension in the <i class="icon-cog"></i> **Settings** dialog.
+
+> **Note:** You can find more information:
+
+> - about **Prettify** syntax highlighting [here][5],
+> - about **Highlight.js** syntax highlighting [here][6].
+
+
+### Footnotes
+
+You can create footnotes like this[^footnote].
+
+  [^footnote]: Here is the *text* of the **footnote**.
+
+
+### SmartyPants
+
+SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
+
+|                  | ASCII                        | HTML              |
+ ----------------- | ---------------------------- | ------------------
+| Single backticks | `'Isn't this fun?'`            | 'Isn't this fun?' |
+| Quotes           | `"Isn't this fun?"`            | "Isn't this fun?" |
+| Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |
+
+
+### Table of contents
+
+You can insert a table of contents using the marker `[TOC]`:
+
+[TOC]
+
+
+### MathJax
+
+You can render *LaTeX* mathematical expressions using **MathJax**, as on [math.stackexchange.com][1]:
+
+The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
+
+$$
+\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
+$$
+
+> **Tip:** Make sure you include **MathJax** into your publications to render mathematical expression properly. Your page/template should include something like this:
+
+```
+<script type="text/javascript" src="https://stackedit.io/libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
 ```
 
-```cs
-class Test{
-    public static void main()
-    {
-        Console.WriteLine("C#");
-    }
-}
+> **Note:** You can find more information about **LaTeX** mathematical expressions [here][4].
+
+
+### UML diagrams
+
+You can also render sequence diagrams like this:
+
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
 ```
 
-##link
+And flow charts like this:
 
----
+```flow
+st=>start: Start
+e=>end
+op=>operation: My Operation
+cond=>condition: Yes or No?
 
-行内连接[github](https://github.com/)的链接
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
 
-See my [About](/about/) page for details.
+> **Note:** You can find more information:
 
-[id]: http://example.com/  "Optional Title Here"
-This is [an example][id] reference-style link.
+> - about **Sequence diagrams** syntax [here][7],
+> - about **Flow charts** syntax [here][8].
 
-下面这三种链接的定义都是相同
+  [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
 
->\[foo]: http://example.com/  "Optional Title Here"
-
->\[foo]: http://example.com/  'Optional Title Here'
-
->\[foo]: http://example.com/  (Optional Title Here)
-
-
-I get 10 times more traffic from [Google] than from
-[Yahoo] or [MSN].
-
-  [Google]: http://google.com/        "Google"
-  [Yahoo]: http://search.yahoo.com/  "Yahoo Search"
-  [MSN]: http://search.msn.com/    "MSN Search"
-
-##图片
-
----
-![github logo](https://raw.githubusercontent.com/hoosin/PPT/master/github/logo.png)
-
-![github logo](https://raw.githubusercontent.com/hoosin/PPT/master/github/logo.png "Optional title")
-
-![github logo][logo]
-[logo]: https://raw.githubusercontent.com/hoosin/PPT/master/github/logo.png  "Optional title attribute"
-
-##表格
-
-ID名称|命名|ID名称  |命名
-:---------------|:---------------|:---------------|:---------------
-头部|header|主体| main
-脚部|footer|容器|wrapper
-侧栏|side_bar|栏目|column
-布局|layout|||
-
-##分隔线
-
-* * *
-
-***
-
-*****
-
-- - -
-
-\---------------------------------------
-
-##其它
-
----
-###**自动链接**
-<http://github.com/>  diff http://github.com/
+  [^gfm]: **GitHub Flavored Markdown** (GFM) is supported in StackEdit.
 
 
-
-###**反斜杠**
-
-\*literal asterisks\*
-
-Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：
->\\   反斜线
->
-\`   反引号
->
-\*   星号
->
-\_   底线
->
-\{}  花括号
->
-\[]  方括号
->
-\()  括弧
->
-\#   井字号
->
-\+   加号
->
-\-   减号
->
-\.   英文句点
->
-\!   惊叹号
-
-##GFM 与标准SM 不一样的地方
-
-* GFM二级标题自动带有下划线
-* GFM在issue中通过#和数字自动链接到对应的issue（request也支持）（eg：#1）
-* GFM自动识别链接，链接不用尖括号括起来也会被认为是链接。
-* GFM实现代码语法高亮
-* GFM自动@别人
-* GFM自动引用，包括项目，用户名，issue等
-* GFM支持任务列表
-
-
-	> - [] task #1
-	> - [] task item
-	> - [x] complete 
-	
- 
+  [1]: http://math.stackexchange.com/
+  [2]: http://daringfireball.net/projects/markdown/syntax "Markdown"
+  [3]: https://github.com/jmcmanus/pagedown-extra "Pagedown Extra"
+  [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
+  [5]: https://code.google.com/p/google-code-prettify/
+  [6]: http://highlightjs.org/
+  [7]: http://bramp.github.io/js-sequence-diagrams/
+  [8]: http://adrai.github.io/flowchart.js/
